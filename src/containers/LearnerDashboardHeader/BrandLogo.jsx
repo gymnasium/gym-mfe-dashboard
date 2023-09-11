@@ -14,7 +14,7 @@ export const BrandLogo = () => {
     <a href={dashboard?.url || '/'} className="mx-auto">
       <img
         className="logo py-3"
-        src="https://edx-cdn.org/v3/prod/logo.svg"
+        src="https://community.abzt.de/theming/asset/images/logo.png"
         alt={formatMessage(messages.logoAltText)}
       />
     </a>
