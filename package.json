@@ -16,8 +16,12 @@
     "test": "TZ=GMT fedx-scripts jest --coverage --passWithNoTests",
     "quality": "npm run lint-fix && npm run test",
     "watch-tests": "jest --watch",
-    "snapshot": "fedx-scripts jest --updateSnapshot",
-    "prepare": "husky install"
+    "snapshot": "fedx-scripts jest --updateSnapshot"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint"
+    }
   },
   "author": "edX",
   "license": "AGPL-3.0",
