@@ -26,7 +26,7 @@
     "access": "public"
   },
   "dependencies": {
-    "@edx/brand": "npm:@edx/brand-edx.org@^2.0.3",
+    "@openedx/brand-openedx": "github:gymnasium/brand-openedx#gym.palm.4",
     "@edx/browserslist-config": "^1.1.0",
     "@edx/frontend-component-footer": "12.0.0",
     "@edx/frontend-component-header": "github:gymnasium/frontend-component-header#gym.palm.4",
