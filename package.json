@@ -1,10 +1,10 @@
 {
   "name": "@edx/frontend-app-learner-dashboard",
-  "version": "0.0.1",
+  "version": "0.0.1-gym.palm.4",
   "description": "",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/edx/frontend-app-learner-dashboard.git"
+    "url": "git+https://github.com/gymnasium/frontend-app-learner-dashboard.git"
   },
   "scripts": {
     "build": "fedx-scripts webpack",
@@ -29,7 +29,7 @@
     "@edx/brand": "npm:@edx/brand-edx.org@^2.0.3",
     "@edx/browserslist-config": "^1.1.0",
     "@edx/frontend-component-footer": "^12.0.0",
-    "@edx/frontend-component-header": "^4.0.0",
+    "@edx/frontend-component-header": "github:gymnasium/frontend-component-header#gym.palm.4",
     "@edx/frontend-enterprise-hotjar": "^1.2.0",
     "@edx/frontend-platform": "^4.2.0",
     "@edx/paragon": "^20.32.0",
