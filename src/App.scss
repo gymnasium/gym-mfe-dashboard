@@ -1,8 +1,8 @@
 // frontend-app-*/src/index.scss
-@import "~@edx/brand/paragon/fonts";
-@import "~@edx/brand/paragon/variables";
+@import "~@openedx/brand-openedx/paragon/fonts";
+@import "~@openedx/brand-openedx/paragon/variables";
 @import "~@edx/paragon/scss/core/core";
-@import "~@edx/brand/paragon/overrides";
+@import "~@openedx/brand-openedx/paragon/overrides";
 
 $fa-font-path: "~font-awesome/fonts";
 @import "~font-awesome/scss/font-awesome";
