@@ -7,6 +7,10 @@ const config = createConfig('webpack-dev');
 config.resolve.modules = [
   path.resolve(__dirname, './src'),
   'node_modules',
+  path.resolve(__dirname, './node_modules'),
+  path.resolve(__dirname, '../frontend-component-header/src'),
+  path.resolve(__dirname, '../frontend-component-footer/src'),
+  path.resolve(__dirname, '../brand-openedx/src'),
 ];
 
 config.module.rules[0].exclude = /node_modules\/(?!(query-string|split-on-first|strict-uri-encode|@edx))/;
