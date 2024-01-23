@@ -2,9 +2,13 @@ const path = require('path');
 const { createConfig } = require('@edx/frontend-build');
 const CopyPlugin = require('copy-webpack-plugin');
 
-const config = createConfig('webpack-prod');
+const config = createConfig('webpack-dev-tutor');
 
 config.cache = { type: 'filesystem' }; // This isn't needed but really speeds up rebuilds!
+
+config.devServer.allowedHosts = [
+  'apps.local.overhang.io',
+];
 
 config.experiments = {
   topLevelAwait: true
