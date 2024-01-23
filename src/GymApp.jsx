@@ -92,18 +92,18 @@ export const GymApp = () => {
         <link rel="shortcut icon" href={getConfig().FAVICON_URL} type="image/x-icon" />
         <link rel="stylesheet" href={css} />
       </Helmet>
-      <>
-        <GymHeader secondaryNav="account" />
-        <main>
+      <GymHeader secondaryNav="account" />
+      <main>
+        <div className="container">
           {hasNetworkFailure
             ? (
               <Alert variant="danger">
                 <ErrorPage message={formatMessage(messages.errorMessage, { supportEmail })} />
               </Alert>
             ) : (<Dashboard />)}
-        </main>
-        {/* <Footer /> */}
-      </>
+        </div>
+      </main>
+      {/* <Footer /> */}
     </Router>
   );
 };
