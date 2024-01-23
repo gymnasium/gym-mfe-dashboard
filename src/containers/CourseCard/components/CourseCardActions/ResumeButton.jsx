@@ -20,6 +20,7 @@ export const ResumeButton = ({ cardId }) => {
   );
   return (
     <ActionButton
+      className="button"
       disabled={disableResumeCourse}
       as="a"
       href="#"
