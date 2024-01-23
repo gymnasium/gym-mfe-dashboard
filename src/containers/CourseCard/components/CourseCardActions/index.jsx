@@ -26,7 +26,6 @@ export const CourseCardActions = ({ cardId }) => {
 
   return (
     <ActionRow data-test-id="CourseCardActions">
-      {!(isEntitlement || isVerified) && <UpgradeButton cardId={cardId} />}
       <PrimaryButton cardId={cardId} />
     </ActionRow>
   );
