@@ -11,6 +11,7 @@ import {
   ErrorPage,
   PageRoute,
 } from '@edx/frontend-platform/react';
+
 import store from 'data/store';
 import {
   APP_READY,
@@ -24,7 +25,7 @@ import { configuration } from './config';
 
 import messages from './i18n';
 
-import App from './App';
+import GymApp from './GymApp';
 import NoticesWrapper from './components/NoticesWrapper';
 
 subscribe(APP_READY, () => {
@@ -33,7 +34,7 @@ subscribe(APP_READY, () => {
       <NoticesWrapper>
         <Switch>
           <PageRoute path="/">
-            <App />
+            <GymApp />
           </PageRoute>
           <Redirect to="/" />
         </Switch>
