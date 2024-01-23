@@ -20,6 +20,7 @@ export const BeginCourseButton = ({ cardId }) => {
   );
   return (
     <ActionButton
+      className="button"
       disabled={disableBeginCourse}
       as="a"
       href="#"
