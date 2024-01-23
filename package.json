@@ -10,8 +10,8 @@
     "build": "fedx-scripts webpack",
     "i18n_extract": "BABEL_ENV=i18n fedx-scripts babel src --quiet > /dev/null",
     "lint": "fedx-scripts eslint --ext .jsx,.js src/",
-    "start": "fedx-scripts webpack-dev-server --progress",
-    "prepare": "npm run build"
+    "prepare": "npm run build",
+    "start": "fedx-scripts webpack-dev-server --progress"
   },
   "author": "edX",
   "license": "AGPL-3.0",
@@ -20,8 +20,6 @@
     "access": "public"
   },
   "dependencies": {
-    "@edx/frontend-component-footer": "github:gymnasium/frontend-component-footer#gym.palm.4",
-    "@edx/frontend-component-header": "github:gymnasium/frontend-component-header#gym.palm.4",
     "@openedx/brand-openedx": "github:gymnasium/brand-openedx#gym.palm.4",
     "@edx/frontend-enterprise-hotjar": "^1.2.0",
     "@edx/frontend-platform": "4.2.0",
