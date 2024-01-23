@@ -26,8 +26,8 @@ import track from 'tracking';
 
 import fakeData from 'data/services/lms/fakeData/courses';
 
-import GymSettings from './gym-frontend-components/data/settings';
-import GymHeader from './gym-frontend-components/gym-header/GymHeader';
+import GymSettings from 'gym-frontend-components/data/settings';
+import GymHeader from 'gym-frontend-components/gym-header/GymHeader';
 
 var timestamp = Date.now();
 const settings = await GymSettings();
