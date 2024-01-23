@@ -11,7 +11,6 @@ import { logError } from '@edx/frontend-platform/logging';
 import { initializeHotjar } from '@edx/frontend-enterprise-hotjar';
 
 import { ErrorPage, AppContext } from '@edx/frontend-platform/react';
-import Footer from '@edx/frontend-component-footer';
 import { Alert } from '@edx/paragon';
 
 import { RequestKeys } from 'data/constants/requests';
@@ -26,17 +25,21 @@ import Dashboard from 'containers/Dashboard';
 import track from 'tracking';
 
 import fakeData from 'data/services/lms/fakeData/courses';
-import { GymHeader } from '@edx/frontend-component-header';
+
+import GymSettings from './gym-frontend-components/data/settings';
+import GymHeader from './gym-frontend-components/gym-header/GymHeader';
+
+var timestamp = Date.now();
+const settings = await GymSettings();
+console.log(settings);
+const root = settings.urls.root; // should be same as marketing URL
+const config = getConfig();
+const css = `${config.MARKETING_SITE_BASE_URL}${settings.css.mfe}?${timestamp}`;
+const title = `Dashboard | ${settings.meta.title}`;
 
 import messages from './messages';
 
 import './App.scss';
-
-var current = Date.now();
-const config = getConfig();
-const settings = `${config.MARKETING_SITE_BASE_URL}/feeds/config.json`;
-const css = `${config.MARKETING_SITE_BASE_URL}/css/mfe.css?${current}`;
-const title = `Dashboard | ${getConfig().SITE_NAME}`;
 
 export const GymApp = () => {
   const { authenticatedUser } = React.useContext(AppContext);
@@ -99,7 +102,7 @@ export const GymApp = () => {
               </Alert>
             ) : (<Dashboard />)}
         </main>
-        <Footer />
+        {/* <Footer /> */}
       </>
     </Router>
   );
