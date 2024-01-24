@@ -26,15 +26,13 @@ import track from 'tracking';
 
 import fakeData from 'data/services/lms/fakeData/courses';
 
-import GymSettings from 'gym-frontend-components/data/settings';
-import GymHeader from 'gym-frontend-components/gym-header/GymHeader';
+import GymSettings, { GymFooter, GymHeader } from './gym-frontend-components';
 
 var timestamp = Date.now();
-const settings = await GymSettings();
-console.log(settings);
+const settings = await GymSettings;
 const root = settings.urls.root; // should be same as marketing URL
 const config = getConfig();
-const css = `${config.MARKETING_SITE_BASE_URL}${settings.css.mfe}?${timestamp}`;
+const css = `${root}${settings.css.mfe}?${timestamp}`;
 const title = `Dashboard | ${settings.meta.title}`;
 
 import messages from './messages';
@@ -103,7 +101,7 @@ export const GymApp = () => {
             ) : (<Dashboard />)}
         </div>
       </main>
-      {/* <Footer /> */}
+      <GymFooter />
     </Router>
   );
 };
