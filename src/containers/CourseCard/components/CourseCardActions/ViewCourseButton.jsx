@@ -21,7 +21,6 @@ export const ViewCourseButton = ({ cardId }) => {
   );
   return (
     <ActionButton
-      className="button"
       disabled={disableViewCourse}
       as="a"
       href="#"
