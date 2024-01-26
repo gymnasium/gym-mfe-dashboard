@@ -90,7 +90,7 @@ export const GymApp = () => {
         <link rel="shortcut icon" href={getConfig().FAVICON_URL} type="image/x-icon" />
         <link rel="stylesheet" href={css} />
       </Helmet>
-      <GymHeader secondaryNav="account" />
+      <GymHeader secondaryNav="dashboard" />
       <main>
         <div className="container">
           {hasNetworkFailure
