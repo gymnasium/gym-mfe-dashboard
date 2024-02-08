@@ -28,16 +28,17 @@ import AppWrapper from 'containers/WidgetContainers/AppWrapper';
 
 import { getConfig } from '@edx/frontend-platform';
 
-const config = getConfig();
 import GymSettings, { GymFooter, GymHeader } from '@edx/gym-frontend';
+
+import messages from './messages';
+import './App.scss';
+
+const config = getConfig();
 const timestamp = Date.now();
 const settings = await GymSettings;
 const root = settings.urls.root; // should be same as marketing URL
 const css = `${root}${settings.css.mfe}?${timestamp}`;
 const title = `Learner Dashboard | ${getConfig().SITE_NAME}`;
-
-import messages from './messages';
-import './App.scss';
 
 export const GymApp = () => {
   const { authenticatedUser } = React.useContext(AppContext);
