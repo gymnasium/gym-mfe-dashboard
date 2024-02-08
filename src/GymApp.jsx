@@ -25,11 +25,8 @@ import track from 'tracking';
 import fakeData from 'data/services/lms/fakeData/courses';
 
 import AppWrapper from 'containers/WidgetContainers/AppWrapper';
-import LearnerDashboardHeader from 'containers/LearnerDashboardHeader';
 
 import { getConfig } from '@edx/frontend-platform';
-import messages from './messages';
-import './App.scss';
 
 const config = getConfig();
 import GymSettings, { GymFooter, GymHeader } from '@edx/gym-frontend';
@@ -38,6 +35,9 @@ const settings = await GymSettings;
 const root = settings.urls.root; // should be same as marketing URL
 const css = `${root}${settings.css.mfe}?${timestamp}`;
 const title = `Learner Dashboard | ${getConfig().SITE_NAME}`;
+
+import messages from './messages';
+import './App.scss';
 
 export const GymApp = () => {
   const { authenticatedUser } = React.useContext(AppContext);
@@ -91,22 +91,21 @@ export const GymApp = () => {
         <link rel="stylesheet" href={css} />
       </Helmet>
       <GymHeader secondaryNav="dashboard" />
-      <main><div className="container">
-        <AppWrapper>
-          {/* <LearnerDashboardHeader /> */}
+        <main><div className="container">
+          <AppWrapper>
 
-            {hasNetworkFailure
-              ? (
-                <Alert variant="danger">
-                  <ErrorPage message={formatMessage(messages.errorMessage, { supportEmail })} />
-                </Alert>
-              ) : (
-                <ExperimentProvider>
-                  <Dashboard />
-                </ExperimentProvider>
-              )}
+              {hasNetworkFailure
+                ? (
+                  <Alert variant="danger">
+                    <ErrorPage message={formatMessage(messages.errorMessage, { supportEmail })} />
+                  </Alert>
+                ) : (
+                  <ExperimentProvider>
+                    <Dashboard />
+                  </ExperimentProvider>
+                )}
 
-        </AppWrapper>
+          </AppWrapper>
 
         </div></main>
       <GymFooter />
