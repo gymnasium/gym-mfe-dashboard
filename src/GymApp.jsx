@@ -92,8 +92,9 @@ export const GymApp = () => {
         <link rel="stylesheet" href={css} />
       </Helmet>
       <GymHeader secondaryNav="dashboard" />
-        <main><div className="container">
-          <AppWrapper>
+        <main>
+          <div className="container">
+            <AppWrapper>
 
               {hasNetworkFailure
                 ? (
@@ -106,9 +107,10 @@ export const GymApp = () => {
                   </ExperimentProvider>
                 )}
 
-          </AppWrapper>
+            </AppWrapper>
 
-        </div></main>
+          </div>
+        </main>
       <GymFooter />
     </>
   );
