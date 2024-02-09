@@ -31,7 +31,7 @@ import { getConfig } from '@edx/frontend-platform';
 import GymSettings, { GymFooter, GymHeader } from '@edx/gym-frontend';
 
 import messages from './messages';
-import './App.scss';
+import './GymApp.scss';
 
 const config = getConfig();
 const timestamp = Date.now();
