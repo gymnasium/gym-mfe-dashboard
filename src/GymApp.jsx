@@ -2,8 +2,6 @@ import React from 'react';
 import { Helmet } from 'react-helmet';
 
 import { useIntl } from '@edx/frontend-platform/i18n';
-import { logError } from '@edx/frontend-platform/logging';
-import { initializeHotjar } from '@edx/frontend-enterprise-hotjar';
 
 import { ErrorPage, AppContext } from '@edx/frontend-platform/react';
 
@@ -16,7 +14,7 @@ import {
   actions,
 } from 'data/redux';
 import { reduxHooks } from 'hooks';
-import Dashboard from 'containers/Dashboard';
+import Dashboard from './gym/containers/Dashboard';
 
 import { ExperimentProvider } from 'ExperimentContext';
 
@@ -69,17 +67,6 @@ export const GymApp = () => {
       window.selectors = selectors;
       window.actions = actions;
       window.track = track;
-    }
-    if (getConfig().HOTJAR_APP_ID) {
-      try {
-        initializeHotjar({
-          hotjarId: getConfig().HOTJAR_APP_ID,
-          hotjarVersion: getConfig().HOTJAR_VERSION,
-          hotjarDebug: !!getConfig().HOTJAR_DEBUG,
-        });
-      } catch (error) {
-        logError(error);
-      }
     }
   }, [authenticatedUser, loadData]);
   return (
