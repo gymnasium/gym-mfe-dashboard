@@ -1,7 +1,7 @@
 import React from 'react';
 
-import ProductRecommendations from 'widgets/ProductRecommendations';
-import hooks from 'widgets/ProductRecommendations/hooks';
+import ProductRecommendations from 'gym/widgets/ProductRecommendations';
+import hooks from 'gym/widgets/ProductRecommendations/hooks';
 
 export const WidgetFooter = () => {
   hooks.useActivateRecommendationsExperiment();

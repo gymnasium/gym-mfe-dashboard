@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import PaintedDoorExperimentProvider from 'widgets/RecommendationsPaintedDoorBtn/PaintedDoorExperimentContext';
+import PaintedDoorExperimentProvider from 'gym/widgets/RecommendationsPaintedDoorBtn/PaintedDoorExperimentContext';
 
 export const AppWrapper = ({
   children,
