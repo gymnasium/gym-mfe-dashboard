@@ -19,10 +19,10 @@ export const LookingForChallengeWidget = () => {
   const { courseSearchUrl } = reduxHooks.usePlatformSettingsData();
   return (
     <Card orientation="horizontal" id="looking-for-challenge-widget">
-      {/* <Card.ImageCap
+      <Card.ImageCap
         src={moreCoursesSVG}
         srcAlt="course side widget"
-      /> */}
+      />
       <Card.Body className="m-auto pr-2">
         <h4>
           {formatMessage(messages.lookingForChallengePrompt)}
