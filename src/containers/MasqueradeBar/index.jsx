@@ -40,7 +40,7 @@ export const MasqueradeBar = () => {
       <Form className="masquerade-bar w-100">
         {isMasquerading ? (
           <>
-            <FormLabel inline className="masquerade-form-label">
+            <FormLabel isInline className="masquerade-form-label">
               <Icon src={PersonSearch} />
               {formatMessage(messages.ViewingAs)}
             </FormLabel>
@@ -54,7 +54,7 @@ export const MasqueradeBar = () => {
           </>
         ) : (
           <>
-            <FormLabel inline id="masquerade-form-label" className="masquerade-form-label">
+            <FormLabel isInline id="masquerade-form-label" className="masquerade-form-label">
               <Icon src={PersonSearch} />
               {formatMessage(messages.ViewAs)}
             </FormLabel>
