@@ -7,7 +7,7 @@ import hooks from 'gym/widgets/ProductRecommendations/hooks';
 export const WidgetSidebar = ({ setSidebarShowing }) => {
   const { inRecommendationsVariant, isExperimentActive } = hooks.useShowRecommendationsFooter();
 
-  useEffect(() => {
+  React.useEffect(() => {
     if (!inRecommendationsVariant && isExperimentActive) {
       setSidebarShowing(true);
     }

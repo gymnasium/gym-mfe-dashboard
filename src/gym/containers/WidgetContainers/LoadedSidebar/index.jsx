@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 
 import RecommendationsPanel from 'gym/widgets/RecommendationsPanel';
@@ -7,7 +7,7 @@ import hooks from 'gym/widgets/ProductRecommendations/hooks';
 export const WidgetSidebar = ({ setSidebarShowing }) => {
   const { inRecommendationsVariant, isExperimentActive } = hooks.useShowRecommendationsFooter();
 
-  useEffect(() => {
+  React.useEffect(() => {
     if (!inRecommendationsVariant && isExperimentActive) {
       setSidebarShowing(true);
     }
