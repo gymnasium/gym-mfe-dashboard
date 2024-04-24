@@ -1,7 +1,7 @@
 {
   "name": "@edx/frontend-app-learner-dashboard",
-  "version": "0.0.1",
-  "description": "",
+  "version": "0.0.1-gym.quince.3",
+  "description": "Gymnasium-specific Learner Dashboard MFE",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/edx/frontend-app-learner-dashboard.git"
