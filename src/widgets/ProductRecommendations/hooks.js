@@ -59,7 +59,7 @@ export const useActivateRecommendationsExperiment = () => {
 
         setExperiment((prev) => ({
           ...prev,
-          isExperimentActive: true,
+          isExperimentActive: false,
           inRecommendationsVariant: experiment.inExperimentVariant,
         }));
 
