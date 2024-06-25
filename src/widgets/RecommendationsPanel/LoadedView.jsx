@@ -11,7 +11,7 @@ import track from './track';
 import CourseCard from './components/CourseCard';
 import messages from './messages';
 
-import './index.scss';
+// import './index.scss';
 import { usePaintedDoorExperimentContext } from '../RecommendationsPaintedDoorBtn/PaintedDoorExperimentContext';
 import { RECOMMENDATIONS_PANEL } from '../RecommendationsPaintedDoorBtn/constants';
 import RecommendationsPaintedDoorBtn from '../RecommendationsPaintedDoorBtn';

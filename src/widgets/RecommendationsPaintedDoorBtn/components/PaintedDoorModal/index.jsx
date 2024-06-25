@@ -5,7 +5,7 @@ import { ModalDialog, ActionRow } from '@edx/paragon';
 import { useIntl } from '@edx/frontend-platform/i18n';
 import messages from '../../messages';
 
-import './index.scss';
+// import './index.scss';
 import {
   trackPaintedDoorRecommendationHomeInterestBtnClicked,
   trackPaintedDoorRecommendationHomeSkipBtnClicked,
