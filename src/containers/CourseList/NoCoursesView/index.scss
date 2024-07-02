@@ -1,4 +1,4 @@
-@import "@edx/paragon/scss/core/core";
+@use "@edx/paragon/scss/core/core" as *;
 
 #no-courses-content-view {
   border: 2px solid $light-400;

@@ -1,10 +1,10 @@
-@import "@edx/paragon/scss/core/core";
+@use "@edx/paragon/scss/core/core" as *;
 
 .course-card {
   .card {
     .pgn__card-wrapper-image-cap.vertical {
       display: flex;
-      min-height: $card-image-vertical-max-height;
+      min-height: 140px;
     }
     .pgn__card-image-cap {
       border-bottom-left-radius: 0 !important;

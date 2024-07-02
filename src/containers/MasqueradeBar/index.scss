@@ -1,4 +1,4 @@
-@import "@edx/paragon/scss/core/core";
+@use "@edx/paragon/scss/core/core" as *;
 
 .masquerade-bar {
   display: flex;
