@@ -68,14 +68,14 @@ export const GymApp = () => {
     }
   }, [authenticatedUser, loadData]);
   return (
-    <>
+    <AppWrapper>
       <Helmet>
         <title>{title}</title>
         <link rel="shortcut icon" href={getFaviconUrl()} type="image/x-icon" />
         <link rel="stylesheet" href={getStyles()} />
 
       </Helmet>
-      <AppWrapper>
+      
         <GymHeader secondaryNav="dashboard" />
         <main>
           <div className="container">
@@ -92,8 +92,8 @@ export const GymApp = () => {
           </div>
         </main>
         <GymFooter />
-      </AppWrapper>
-    </>
+      
+    </AppWrapper>
   );
 };
 
