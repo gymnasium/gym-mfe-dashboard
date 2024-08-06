@@ -2,7 +2,6 @@ import React from 'react';
 import { Helmet } from 'react-helmet';
 
 import { useIntl } from '@edx/frontend-platform/i18n';
-import { logError } from '@edx/frontend-platform/logging';
 
 import { ErrorPage, AppContext } from '@edx/frontend-platform/react';
 import { Alert } from '@openedx/paragon';
@@ -22,7 +21,7 @@ import fakeData from 'data/services/lms/fakeData/courses';
 
 import AppWrapper from 'containers/WidgetContainers/AppWrapper';
 
-import { ensureConfig, getConfig } from '@edx/frontend-platform';
+import { getConfig } from '@edx/frontend-platform';
 
 import { GymFooter as FooterSlot, GymHeader } from '@openedx/gym-frontend';
 
