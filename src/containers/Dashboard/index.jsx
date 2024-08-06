@@ -9,7 +9,7 @@ import CoursesPanel from 'containers/CoursesPanel';
 import LoadingView from './LoadingView';
 import DashboardLayout from './DashboardLayout';
 import hooks from './hooks';
-import './index.scss';
+// import './index.scss';
 
 export const Dashboard = () => {
   hooks.useInitializeDashboard();
