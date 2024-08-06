@@ -1,6 +1,6 @@
 // Hide everything until our external CSS loads.
 html {
-  background-color: black;
+  background-color: var(--mono-200);
 }
 
 #root {
