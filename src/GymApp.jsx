@@ -65,22 +65,20 @@ export const GymApp = () => {
         <title>{formatMessage(messages.pageTitle)}</title>
         <link rel="shortcut icon" href={getConfig().FAVICON_URL} type="image/x-icon" />
       </Helmet>
-      <div>
-        <AppWrapper>
-          <GymHeader secondaryNav="dashboard" activeLink="dashboard" />
-          <main>
-            {hasNetworkFailure
-              ? (
-                <Alert variant="danger">
-                  <ErrorPage message={formatMessage(messages.errorMessage, { supportEmail })} />
-                </Alert>
-              ) : (
-                <Dashboard />
-              )}
-          </main>
-        </AppWrapper>
-        <FooterSlot />
-      </div>
+      <AppWrapper>
+        <GymHeader secondaryNav="dashboard" activeLink="dashboard" />
+        <main>
+          {hasNetworkFailure
+            ? (
+              <Alert variant="danger">
+                <ErrorPage message={formatMessage(messages.errorMessage, { supportEmail })} />
+              </Alert>
+            ) : (
+              <Dashboard />
+            )}
+        </main>
+      </AppWrapper>
+      <FooterSlot />
     </>
   );
 };
