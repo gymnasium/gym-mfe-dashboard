@@ -2,6 +2,7 @@ import React from 'react';
 import { Helmet } from 'react-helmet';
 
 import { useIntl } from '@edx/frontend-platform/i18n';
+import { logError } from '@edx/frontend-platform/logging';
 
 import { ErrorPage, AppContext } from '@edx/frontend-platform/react';
 import { Alert } from '@openedx/paragon';
@@ -28,6 +29,10 @@ import { GymFooter as FooterSlot, GymHeader } from '@openedx/gym-frontend';
 import messages from './messages';
 import './GymApp.scss';
 
+import {Intercom, boot, update } from "@intercom/messenger-js-sdk";
+
+const INTERCOM_APP_ID = () => getConfig().INTERCOM_APP_ID;
+
 export const GymApp = () => {
   const { authenticatedUser } = React.useContext(AppContext);
   const { formatMessage } = useIntl();
@@ -38,6 +43,21 @@ export const GymApp = () => {
   const hasNetworkFailure = isFailed.initialize || isFailed.refreshList;
   const { supportEmail } = reduxHooks.usePlatformSettingsData();
   const loadData = reduxHooks.useLoadData();
+
+  if (INTERCOM_APP_ID()) {
+    try {
+      Intercom({app_id: INTERCOM_APP_ID()});
+
+      const INTERCOM_SETTINGS = {
+        email: authenticatedUser?.email,
+        user_id: authenticatedUser?.username,
+      }
+    
+      update(INTERCOM_SETTINGS);
+    } catch (error) {
+      logError(error);
+    }
+  }
 
   React.useEffect(() => {
     if (authenticatedUser?.administrator || getConfig().NODE_ENV === 'development') {
