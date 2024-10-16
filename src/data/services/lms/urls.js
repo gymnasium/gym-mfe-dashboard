@@ -27,9 +27,14 @@ const programsUrl = () => baseAppUrl('/dashboard/programs');
 export const creditPurchaseUrl = (courseId) => `${getEcommerceUrl()}/credit/checkout/${courseId}/`;
 export const creditRequestUrl = (providerId) => `${getApiUrl()}/credit/v1/providers/${providerId}/request/`;
 
+// marketing site courses url
+const getMarketingSiteUrl = () => getConfig().MARKETING_SITE_BASE_URL;
+export const coursesUrl = () => (`${getMarketingSiteUrl()}/courses/`);
+
 export default StrictDict({
   getApiUrl,
   baseAppUrl,
+  coursesUrl,
   courseUnenroll,
   creditPurchaseUrl,
   creditRequestUrl,

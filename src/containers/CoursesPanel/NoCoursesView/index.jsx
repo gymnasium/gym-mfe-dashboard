@@ -2,7 +2,7 @@ import React from 'react';
 import { useIntl } from '@edx/frontend-platform/i18n';
 import { Button, Image } from '@openedx/paragon';
 import { Search } from '@openedx/paragon/icons';
-import { baseAppUrl } from 'data/services/lms/urls';
+import { baseAppUrl, coursesUrl } from 'data/services/lms/urls';
 
 import emptyCourseSVG from 'assets/empty-course.svg';
 import { reduxHooks } from 'hooks';
@@ -16,9 +16,9 @@ export const NoCoursesView = () => {
   return (
     <div
       id="no-courses-content-view"
-      className="d-flex align-items-center justify-content-center mb-4.5"
+      className="no-courses-content-view"
     >
-      <Image src={emptyCourseSVG} alt={formatMessage(messages.bannerAlt)} />
+      {/* <Image src={emptyCourseSVG} alt={formatMessage(messages.bannerAlt)} /> */}
       <h1>
         {formatMessage(messages.lookingForChallengePrompt)}
       </h1>
@@ -28,7 +28,7 @@ export const NoCoursesView = () => {
       <Button
         variant="brand"
         as="a"
-        href={baseAppUrl(courseSearchUrl)}
+        href={coursesUrl()}
         iconBefore={Search}
       >
         {formatMessage(messages.exploreCoursesButton)}
