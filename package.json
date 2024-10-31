@@ -1,7 +1,7 @@
 {
   "name": "@edx/frontend-app-learner-dashboard",
-  "version": "0.0.2-gym.redwood",
-  "description": "",
+  "version": "0.0.3-gym.redwood",
+  "description": "Open EdX Learner Dashboard for Gymnasium",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/edx/frontend-app-learner-dashboard.git"
