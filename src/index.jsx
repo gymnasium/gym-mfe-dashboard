@@ -10,7 +10,6 @@ import {
 
 import {
   AppProvider,
-  ErrorPage,
   PageWrap,
 } from '@edx/frontend-platform/react';
 import store from 'data/store';
@@ -28,6 +27,7 @@ import messages from './i18n';
 
 import GymApp from './GymApp';
 import NoticesWrapper from './components/NoticesWrapper';
+import { ErrorPage } from '@openedx/gym-frontend';
 
 subscribe(APP_READY, () => {
   ReactDOM.render(
