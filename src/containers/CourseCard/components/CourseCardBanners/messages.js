@@ -71,6 +71,16 @@ const messages = defineMessages({
     description: 'Certificate link text',
     defaultMessage: 'View Certificate.',
   },
+  badgeReady: {
+    id: 'learner-dash.courseCard.banners.badgeReady',
+    description: 'badge ready message',
+    defaultMessage: 'Congratulations.  Your badge is ready.',
+  },
+  viewBadge: {
+    id: 'learner-dash.courseCard.banners.viewBadge',
+    description: 'Badge link text',
+    defaultMessage: 'View Badge.',
+  },
   certMinGrade: {
     id: 'learner-dash.courseCard.banners.certMinGrade',
     description: 'Passing grade requirement message',
