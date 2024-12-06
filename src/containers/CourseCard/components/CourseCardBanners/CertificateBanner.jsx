@@ -1,5 +1,5 @@
 /* eslint-disable max-len */
-import React from 'react';
+import React, { useMemo, useState } from 'react';
 import PropTypes from 'prop-types';
 
 import { MailtoLink, Hyperlink } from '@openedx/paragon';
@@ -21,12 +21,21 @@ export const CertificateBanner = ({ cardId }) => {
   } = reduxHooks.useCardEnrollmentData(cardId);
   const { isPassing } = reduxHooks.useCardGradeData(cardId);
   const { isArchived } = reduxHooks.useCardCourseRunData(cardId);
+  const { courseId } = reduxHooks.useCardCourseRunData(cardId);
   const { minPassingGrade, progressUrl } = reduxHooks.useCardCourseRunData(cardId);
   const { supportEmail, billingEmail } = reduxHooks.usePlatformSettingsData();
   const { formatMessage } = useIntl();
   const formatDate = useFormatDate();
+  const [courseNum, setCourseNum] = useState(null);
 
   const emailLink = address => <MailtoLink to={address}>{address}</MailtoLink>;
+
+  // Use REGEX to get numeric course id? Seems like there should be a different way of doing this
+  useMemo(() => {
+    const regex = /course-v1:.*?\+(.*?)\+/;
+    const match = courseId.match(regex);
+    setCourseNum(match[1]);
+  }, [courseId]);
 
   if (certificate.isRestricted) {
     return (
@@ -40,12 +49,12 @@ export const CertificateBanner = ({ cardId }) => {
   if (certificate.isDownloadable) {
     return (
       <Banner variant="success" icon={CheckCircle}>
-        {formatMessage(messages.certReady)}
+        {parseInt(courseNum) >= 100 ? formatMessage(messages.certReady) : formatMessage(messages.badgeReady)}
         {certificate.certPreviewUrl && (
           <>
             {'  '}
             <Hyperlink isInline destination={certificate.certPreviewUrl}>
-              {formatMessage(messages.viewCertificate)}
+              {parseInt(courseNum) >= 100 ? formatMessage(messages.viewCertificate) : formatMessage(messages.viewBadge)}
             </Hyperlink>
           </>
         )}
