@@ -25,16 +25,15 @@ import { configuration } from './config';
 
 import messages from './i18n';
 
-import GymApp from './GymApp';
 import NoticesWrapper from './components/NoticesWrapper';
-import { ErrorPage } from '@openedx/gym-frontend';
+import { LearnerDashboard as App, ErrorPage } from '@openedx/gym-frontend';
 
 subscribe(APP_READY, () => {
   ReactDOM.render(
     <AppProvider store={store}>
       <NoticesWrapper>
         <Routes>
-          <Route path="/" element={<PageWrap><GymApp /></PageWrap>} />
+          <Route path="/" element={<PageWrap><App /></PageWrap>} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </NoticesWrapper>
