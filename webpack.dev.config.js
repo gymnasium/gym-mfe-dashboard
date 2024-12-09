@@ -9,6 +9,11 @@ config.resolve.modules = [
   'node_modules',
 ];
 
+config.resolve.alias = {
+  ...config.resolve.alias,
+  '@src': path.resolve(__dirname, 'src'),
+};
+
 config.module.rules[0].exclude = /node_modules\/(?!(query-string|split-on-first|strict-uri-encode|@edx|@openedx))/;
 
 config.plugins.push(
