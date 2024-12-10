@@ -26,7 +26,8 @@ import { configuration } from './config';
 import messages from './i18n';
 
 import NoticesWrapper from './components/NoticesWrapper';
-import { LearnerDashboard as App, ErrorPage } from '@openedx/gym-frontend';
+import { LearnerDashboard as App } from '@openedx/gym-frontend/overrides/learner-dashboard';
+import { ErrorPage } from '@openedx/gym-frontend/overrides';
 
 subscribe(APP_READY, () => {
   ReactDOM.render(
