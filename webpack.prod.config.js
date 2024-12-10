@@ -12,6 +12,7 @@ config.resolve.modules = [
 config.resolve.alias = {
   ...config.resolve.alias,
   '@src': path.resolve(__dirname, 'src'),
+  './ErrorBoundary': path.resolve(__dirname, 'node_modules/@openedx/gym-frontend/overrides/ErrorBoundary'),
 };
 
 config.module.rules[0].exclude = /node_modules\/(?!(query-string|split-on-first|strict-uri-encode|@edx|@openedx))/;
